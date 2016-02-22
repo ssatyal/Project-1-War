@@ -5,6 +5,8 @@ var suitWorth = [0, 1, 2, 3];
 var deck = [];
 var playerHand = [];
 var computerHand = [];
+var clickButton = document.getElementById('clicky');
+clickButton.addEventListener("click", evalHands);
 
 //this function builds the game deck
 function buildDeck() {
@@ -45,8 +47,8 @@ function shuffleDeck(array) {
 
 function evalHands () {
   //Show hands:
-  console.log('player: '+playerHand[0]);
-  console.log('computer: '+computerHand[0]);
+  console.log('Player: '+playerHand[0][0]+' '+playerHand[0][1]);
+  console.log('Computer: '+computerHand[0][0]+' '+computerHand[0][1]);
   //if the player wins
   {if (playerHand[0][2] > computerHand[0][2]){
     moveToPlayerHand();
@@ -93,10 +95,15 @@ function moveToComputerHand() {
 buildDeck();
 shuffleDeck(deck);
 deal();
-while (playerHand.length > 0 && computerHand.length > 0) {
-  evalHands();
-}
+
+// some while loop stuff here:
+// while (playerHand.length > 0 && computerHand.length > 0) {
+//   evalHands();
+// }
+
+
+
 if (computerHand.length == 52){
   console.log('Computer won, better luck next time.');
-}else{console.log('You win! Congratulations.');
+}else if (playerHand.length == 52){console.log('You win! Congratulations.');
 }
