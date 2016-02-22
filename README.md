@@ -66,6 +66,6 @@ BRONZE: MVP
 - press a button, all rounds run consecutively
 - ties aren't broken
 - evaluates cards based on ~~indices~~ worth
-  if that fails, some complex/convoluted switch statement will get us there
+  - if that fails, some complex/convoluted switch statement will get us there
 - an alert informs the user of the final score
   or alert after each round and make the user click through minimum 26 alerts... mwuahaha
