@@ -6,6 +6,7 @@ var deck = [];
 var playerHand = [];
 var computerHand = [];
 var clickButton = document.getElementById('clicky');
+var p = document.getElementsByTagName('p');
 clickButton.addEventListener("click", evalHands);
 
 //this function builds the game deck
@@ -65,6 +66,7 @@ function evalHands () {
     }
   console.log("Player deck: "+playerHand.length);
   console.log("Computer deck: "+computerHand.length);
+  $( "p" ).replaceWith( '<h2>Player deck: '+playerHand.length+'</h2>');
   }
 }
 
@@ -76,8 +78,11 @@ function moveToPlayerHand() {
   computerHand.splice(0, 1);
   //player hand should move to the back
   playerHand.push(playerHand[0]);
-  playerHand.splice(0, 1);
-}
+  playerHand.splice(0, 1);}
+//attempted jQuery:
+    // $('button').click(function(){
+    //       $("p").append("test<br>")}
+    //     )};
 
 function moveToComputerHand() {
   console.log('Computer won');
@@ -95,8 +100,10 @@ function moveToComputerHand() {
 buildDeck();
 shuffleDeck(deck);
 deal();
+var computerDeck = computerHand.length;
+var playerDeck = playerHand.length;
 
-// some while loop stuff here:
+// some while loop stuff here for testing
 // while (playerHand.length > 0 && computerHand.length > 0) {
 //   evalHands();
 // }
