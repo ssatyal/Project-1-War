@@ -1,5 +1,6 @@
 var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
 var suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
+var valWorth = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 var deck = [];
 var playerHand = [];
 var computerHand = [];
@@ -8,7 +9,7 @@ var computerHand = [];
 function buildDeck() {
   for (var i = 0; i < values.length; i++) {
     for (var j = 0; j < suits.length; j++){
-        deck.push([values[i],suits[j]]);
+        deck.push([values[i],suits[j], valWorth[i]]);
     }
   }
 }
@@ -42,8 +43,14 @@ function shuffleDeck(array) {
 
 //let's evaluate one hand for now
 function evalHands () {
-  console.log(playerHand[0][0]);
-  console.log(computerHand[0][0]);
+  console.log('player: '+playerHand[0]);
+  console.log('computer: '+computerHand[0]);
+  if (playerHand[0][2] > computerHand[0][2])
+  {console.log('player won');
+  }else if (playerHand[0][2] < computerHand[0][2]){
+  console.log('computer won');
+  }else{console.log('tie!');
+  }
 }
 
 //calling functions here:
