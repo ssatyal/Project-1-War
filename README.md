@@ -3,6 +3,26 @@
 Project 1
 WAR
 
+#Task Tracking
+Backlog:
+- Create arrays for deck: cards + suits
+- Create a shuffle function (auto-run)
+- Create a deal function (auto-run)
+- Create game logic to evaluate winner each round
+- Click function fires off a round
+- Game round appends to page
+- Counters keep track of scores and rounds
+- CSS style page
+- add HTML elements to append game logs to
+
+Complete:
+- Initialize HTML, CSS, JS files and link
+- Gold/Silver/Bronze cases and MVP
+- User Stories
+
+Icebox:
+- Reset button for the game
+
 # User Stories
 As a <role> I should be able to <goal> so that <reason>
 - As a user, I should be able to click a button to initiate the game.
@@ -10,7 +30,6 @@ As a <role> I should be able to <goal> so that <reason>
 - As a user, I should be able to see previous rounds & the score so that I can asses who is currently winning.
 - As a user, I should be able to see the final score to determine who won the game of WAR.
 - As a user, I should be able to reset the game so that I can start over because I'm probably a sore loser.
-
 
 # Gold/Silver/Bronze Analysis
 
