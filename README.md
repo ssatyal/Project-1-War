@@ -3,7 +3,16 @@
 Project 1
 WAR
 
-Gold/Silver/Bronze Analysis
+# User Stories
+As a <role> I should be able to <goal> so that <reason>
+-As a user, I should be able to click a button to initiate the game.
+-As a user, I should be able to see what hand was played so that I see the winner of each round.
+-As a user, I should be able to see previous rounds & the score so that I can asses who is currently winning.
+-As a user, I should be able to see the final score to determine who won the game of WAR.
+-As a user, I should be able to reset the game so that I can start over because I'm probably a sore loser.
+
+
+# Gold/Silver/Bronze Analysis
 
 Silver:
 -shuffle/deal deck on page load
@@ -15,7 +24,6 @@ Silver:
   computer had x, player had y, winner = x||y,
   current score comp a, player b
 -counters indicate the current score and round
-
 
 GOLD:
 -shuffle/deal deck
@@ -31,7 +39,6 @@ GOLD:
 -game log showing previous rounds/moves (DOM append)
 -ability to reset game with a button
 -everything handled/pushed up with DOM manipulation
-
 
 BRONZE: MVP
 -2 players only, user and computer
