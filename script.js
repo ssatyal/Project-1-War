@@ -66,7 +66,7 @@ function evalHands () {
     }
   console.log("Player deck: "+playerHand.length);
   console.log("Computer deck: "+computerHand.length);
-  $( "p" ).replaceWith( '<p>Player deck: '+playerHand.length+'</p>');
+  $( "p" ).replaceWith( '<p>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
   }
 }
 
