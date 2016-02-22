@@ -5,7 +5,6 @@ WAR
 
 #Task Tracking
 Backlog:
-- Create a shuffle function (auto-run)
 - Create a deal function (auto-run)
 - Create game logic to evaluate winner each round
 - Click function fires off a round
@@ -19,6 +18,7 @@ Complete:
 - Gold/Silver/Bronze cases and MVP
 - User Stories
 - Create arrays for deck: cards + suits
+- Create a shuffle function (auto-run)
 
 Icebox:
 - Reset button for the game
