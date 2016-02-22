@@ -1,1 +1,44 @@
 # Project-1-War
+
+Project 1
+WAR
+
+Gold/Silver/Bronze Analysis
+
+Silver:
+-shuffle/deal deck on page load
+-2 players
+-ties will remain ties
+-button click initiates each round
+-evaluates cards using indices of arrays
+-round scores/game log are updated after each round using DOM manipulation/appends
+  computer had x, player had y, winner = x||y,
+  current score comp a, player b
+-counters indicate the current score and round
+
+
+GOLD:
+-shuffle/deal deck
+-allows multiple users to play
+-hands dealt account for 52 cards / x players,
+  ex if 5 players, 2 cards randomly discarded
+-has a counter for rounds, also indicates how many remain
+-evaluates cards using indices of arrays
+-after each round, score is updated and moves are shown
+  -computer had x, player had y, winner = x||y,
+    current score comp a, player b
+-evaluates tie situations based on suits
+-game log showing previous rounds/moves (DOM append)
+-ability to reset game with a button
+-everything handled/pushed up with DOM manipulation
+
+
+BRONZE: MVP
+-2 players only, user and computer
+-shuffle & deal deck automatically/page load
+-press a button, all 26 rounds run and are evaluated at once
+-ties aren't broken
+-evaluates cards based on indices
+  if that fails, some complex/convoluted switch statement will get us there
+-an alert informs the user of the final score
+  or alert after each round and make the user click through minimum 26 alerts... mwuahaha
