@@ -56,7 +56,7 @@ function evalHands () {
   }else if (playerHand[0][2] < computerHand[0][2]) {
     moveToComputerHand();
   //it's a tie, coin flip it
-  }else{console.log('tie! coin flip determines winner...');
+  }else{console.log('Tie! Coin flip determines winner...');
     if (Math.random() > 0.5) {
       moveToPlayerHand();
     }else{
@@ -69,7 +69,7 @@ function evalHands () {
 }
 
 function moveToPlayerHand() {
-  console.log('player won');
+  console.log('Player won');
   //computer hand is transferred to player deck
   playerHand.push(computerHand[0]);
   //computer hand is removed from computer deck
@@ -80,7 +80,7 @@ function moveToPlayerHand() {
 }
 
 function moveToComputerHand() {
-  console.log('computer won');
+  console.log('Computer won');
   //player hand put at end of comp deck
   computerHand.push(playerHand[0]);
   //player hand removed from player deck
