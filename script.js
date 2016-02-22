@@ -44,11 +44,30 @@ function shuffleDeck(array) {
 
 
 function evalHands () {
+  //Show hands:
   console.log('player: '+playerHand[0]);
   console.log('computer: '+computerHand[0]);
   //if the player wins
-  {if (playerHand[0][2] > computerHand[0][2])
-    {console.log('player won');
+  {if (playerHand[0][2] > computerHand[0][2]){
+    moveToPlayerHand();
+  //if computer wins
+  }else if (playerHand[0][2] < computerHand[0][2]) {
+    moveToComputerHand();
+  //it's a tie, coin flip it
+  }else{console.log('tie! coin flip determines winner...');
+    if (Math.random() > 0.5) {
+      moveToPlayerHand();
+    }else{
+      moveToComputerHand();
+      }
+    }
+  console.log("Player deck: "+playerHand.length);
+  console.log("Computer deck: "+computerHand.length);
+  }
+}
+
+function moveToPlayerHand() {
+  console.log('player won');
   //computer hand is transferred to player deck
   playerHand.push(computerHand[0]);
   //computer hand is removed from computer deck
@@ -56,7 +75,9 @@ function evalHands () {
   //player hand should move to the back
   playerHand.push(playerHand[0]);
   playerHand.splice(0, 1);
-  }else if (playerHand[0][2] < computerHand[0][2]){
+}
+
+function moveToComputerHand() {
   console.log('computer won');
   //player hand put at end of comp deck
   computerHand.push(playerHand[0]);
@@ -65,17 +86,8 @@ function evalHands () {
   //computer hand should move to the back
   computerHand.push(computerHand[0]);
   computerHand.splice(0, 1);
-}else{console.log('tie! suits determine winner...');
-  //computer hand moved to back
-  computerHand.push(computerHand[0]);
-  computerHand.splice(0, 1);
-  //player hand moved to back
-  playerHand.push(playerHand[0]);
-  playerHand.splice(0, 1);
-}}
-  console.log("Player deck: "+playerHand.length);
-  console.log("Computer deck: "+computerHand.length);
 }
+
 
 //calling functions here:
 buildDeck();
@@ -83,4 +95,8 @@ shuffleDeck(deck);
 deal();
 while (playerHand.length > 0 && computerHand.length > 0) {
   evalHands();
+}
+if (computerHand.length == 52){
+  console.log('Computer won, better luck next time.');
+}else{console.log('You win! Congratulations.');
 }

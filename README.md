@@ -5,8 +5,6 @@ WAR
 
 #Task Tracking
 Backlog:
-- Create game logic to evaluate winner each round
-- Send loser's card to game winner's deck
 - Click function fires off a round
 - Game round appends to page
 - Counters keep track of scores and rounds
@@ -20,6 +18,8 @@ Complete:
 - Create arrays for deck: cards + suits
 - Create a shuffle function (auto-run)
 - Create a deal function (auto-run)
+- Create game logic to evaluate winner each round
+- Send loser's card to game winner's deck
 
 Icebox:
 - Reset button for the game
