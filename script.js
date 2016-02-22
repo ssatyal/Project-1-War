@@ -8,7 +8,7 @@ var computerHand = [];
 function buildDeck() {
   for (var i = 0; i < values.length; i++) {
     for (var j = 0; j < suits.length; j++){
-        deck.push(values[i] +" "+ suits[j]);
+        deck.push([values[i],suits[j]]);
     }
   }
 }
@@ -40,7 +40,14 @@ function shuffleDeck(array) {
     }
   }
 
+//let's evaluate one hand for now
+function evalHands () {
+  console.log(playerHand[0][0]);
+  console.log(computerHand[0][0]);
+}
+
 //calling functions here:
 buildDeck();
 shuffleDeck(deck);
 deal();
+evalHands();
