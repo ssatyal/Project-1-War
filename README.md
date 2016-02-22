@@ -6,6 +6,7 @@ WAR
 #Task Tracking
 Backlog:
 - Create game logic to evaluate winner each round
+- Send loser's card to game winner's deck
 - Click function fires off a round
 - Game round appends to page
 - Counters keep track of scores and rounds
@@ -62,9 +63,9 @@ GOLD:
 BRONZE: MVP
 - 2 players only, user and computer
 - shuffle & deal deck automatically/page load
-- press a button, all 26 rounds run and are evaluated at once
+- press a button, all rounds run consecutively
 - ties aren't broken
-- evaluates cards based on indices
+- evaluates cards based on ~~indices~~ worth
   if that fails, some complex/convoluted switch statement will get us there
 - an alert informs the user of the final score
   or alert after each round and make the user click through minimum 26 alerts... mwuahaha
