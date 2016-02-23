@@ -5,7 +5,6 @@ WAR
 
 #Task Tracking
 Backlog:
-- Click function fires off a round
 - Game round appends to page
 - Counters keep track of scores and rounds
 - CSS style page
@@ -20,6 +19,7 @@ Complete:
 - Create a deal function (auto-run)
 - Create game logic to evaluate winner each round
 - Send loser's card to game winner's deck
+- Click function fires off a round
 
 Icebox:
 - Reset button for the game

@@ -57,8 +57,10 @@ function evalHands () {
 }else{
     if (Math.random() > 0.5) {
       moveToPlayerHand();
+      alert("There was a tie, PLAYER wins coin flip!");
     }else{
       moveToComputerHand();
+      alert("There was a tie, COMPUTER wins coin flip!");
       }
     }
   console.log("Player deck: "+playerHand.length);
@@ -92,7 +94,7 @@ function moveToComputerHand() {
 
 function displayCards() {
   $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][4]+">");
-  $('img.compCard').replaceWith("<img class='cCard' src="+computerHand[0][4]+">");
+  $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][4]+">");
 }
 
 //calling functions here:
