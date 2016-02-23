@@ -1,4 +1,4 @@
-var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
 var suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
 var valWorth = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 var suitWorth = [0, 1, 2, 3];
@@ -13,7 +13,7 @@ clickButton.addEventListener("click", evalHands);
 function buildDeck() {
   for (var i = 0; i < values.length; i++) {
     for (var j = 0; j < suits.length; j++){
-        deck.push([values[i],suits[j], valWorth[i], suitWorth[i]]);
+        deck.push([values[i],suits[j], valWorth[i], suitWorth[i], "images/"+values[i]+"_of_"+suits[j].toLowerCase()+".png"]);
     }
   }
 }
@@ -65,6 +65,7 @@ function evalHands () {
   console.log("Computer deck: "+computerHand.length);
   if (playerHand.length > 0 && computerHand.length > 0) {
   $( "p" ).replaceWith( '<p>Player card: '+playerHand[0][0]+' '+playerHand[0][1]+ '<br>Computer card: '+computerHand[0][0]+' '+computerHand[0][1]+'<br>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
+  displayCards();
 }
   }
 
@@ -89,13 +90,17 @@ function moveToComputerHand() {
   computerHand.splice(0, 1);
 }
 
+function displayCards() {
+  $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][4]+">");
+
+}
 
 //calling functions here:
 buildDeck();
 shuffleDeck(deck);
 deal();
-var computerDeck = computerHand.length;
-var playerDeck = playerHand.length;
+// var computerDeck = computerHand.length;
+// var playerDeck = playerHand.length;
 
 //some while loop stuff here for testing
 // while (playerHand.length > 0 && computerHand.length > 0) {
@@ -105,9 +110,9 @@ var playerDeck = playerHand.length;
 
 //work around to show final tally
 if (computerHand.length == 52){
-  $( 'p').replaceWith('<br><br>Player Deck: 0<br>Computer deck: 52');
-  $( 'div' ).replaceWith( '<div>Game over, Computer has won.</div>');
+  $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
+  $( 'div' ).replaceWith( '<br><div>Game over, Computer has won.</div>');
 }else if (playerHand.length == 52){
-  $( 'p').replaceWith('<br><br>Player Deck: 52<br>Computer deck: 0');
-  $( 'div' ).replaceWith( '<div>User has won!</div>');
+  $( 'p').replaceWith('<p>Player Deck: 52<br>Computer deck: 0</p>');
+  $( 'div' ).replaceWith( '<div><br>User has won!</div>');
 }
