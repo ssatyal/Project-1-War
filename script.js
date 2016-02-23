@@ -48,16 +48,13 @@ function shuffleDeck(array) {
 
 function evalHands () {
   //Show hands:
-  console.log('Player: '+playerHand[0][0]+' '+playerHand[0][1]);
-  console.log('Computer: '+computerHand[0][0]+' '+computerHand[0][1]);
-  //if the player wins
-  {if (playerHand[0][2] > computerHand[0][2]){
+  if (playerHand[0][2] > computerHand[0][2]){
     moveToPlayerHand();
   //if computer wins
   }else if (playerHand[0][2] < computerHand[0][2]) {
     moveToComputerHand();
   //it's a tie, coin flip it
-  }else{console.log('Tie! Coin flip determines winner...');
+}else{
     if (Math.random() > 0.5) {
       moveToPlayerHand();
     }else{
@@ -66,9 +63,10 @@ function evalHands () {
     }
   console.log("Player deck: "+playerHand.length);
   console.log("Computer deck: "+computerHand.length);
-  $( "p" ).replaceWith( '<p>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
-  }
+  if (playerHand.length > 0 && computerHand.length > 0) {
+  $( "p" ).replaceWith( '<p>Player card: '+playerHand[0][0]+' '+playerHand[0][1]+ '<br>Computer card: '+computerHand[0][0]+' '+computerHand[0][1]+'<br>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
 }
+  }
 
 function moveToPlayerHand() {
   console.log('Player won');
@@ -79,10 +77,6 @@ function moveToPlayerHand() {
   //player hand should move to the back
   playerHand.push(playerHand[0]);
   playerHand.splice(0, 1);}
-//attempted jQuery:
-    // $('button').click(function(){
-    //       $("p").append("test<br>")}
-    //     )};
 
 function moveToComputerHand() {
   console.log('Computer won');
@@ -103,14 +97,17 @@ deal();
 var computerDeck = computerHand.length;
 var playerDeck = playerHand.length;
 
-// some while loop stuff here for testing
+//some while loop stuff here for testing
 // while (playerHand.length > 0 && computerHand.length > 0) {
-//   evalHands();
-// }
+//    evalHands();
+//  }
 
 
-
+//work around to show final tally
 if (computerHand.length == 52){
-  console.log('Computer won, better luck next time.');
-}else if (playerHand.length == 52){console.log('You win! Congratulations.');
+  $( 'p').replaceWith('<br><br>Player Deck: 0<br>Computer deck: 52');
+  $( 'div' ).replaceWith( '<div>Game over, Computer has won.</div>');
+}else if (playerHand.length == 52){
+  $( 'p').replaceWith('<br><br>Player Deck: 52<br>Computer deck: 0');
+  $( 'div' ).replaceWith( '<div>User has won!</div>');
 }
