@@ -1,7 +1,7 @@
 var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
 var suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
-var valWorth = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-var suitWorth = [0, 1, 2, 3];
+var valWorth = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+// var suitWorth = [0, 1, 2, 3];
 var deck = [];
 var playerHand = [];
 var computerHand = [];
@@ -13,7 +13,7 @@ clickButton.addEventListener("click", evalHands);
 function buildDeck() {
   for (var i = 0; i < values.length; i++) {
     for (var j = 0; j < suits.length; j++){
-        deck.push([values[i],suits[j], valWorth[i], suitWorth[i], "images/"+values[i]+"_of_"+suits[j].toLowerCase()+".png"]);
+        deck.push([values[i],suits[j], valWorth[i], "images/"+values[i]+"_of_"+suits[j].toLowerCase()+".png"]);
     }
   }
 }
@@ -93,8 +93,8 @@ function moveToComputerHand() {
 }
 
 function displayCards() {
-  $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][4]+">");
-  $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][4]+">");
+  $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][3]+">");
+  $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][3]+">");
 }
 
 //calling functions here:
