@@ -1,12 +1,13 @@
 body {
   background: url('wood.jpg') no-repeat center center fixed;
+  color: white;
+  font-family: "PT Sans", sans-serif;
 }
 
 h1 {
   font-family: "PT Sans", sans-serif;
   margin: 10 auto;
   text-align: center;
-  color: white;
 }
 
 button {
@@ -15,8 +16,6 @@ button {
 }
 
 p {
-  font-family: "PT Sans", sans-serif;
-  color: white;
   font-size: 20px;
   display: block;
   float: left;
@@ -31,8 +30,6 @@ p {
   left: 40%;
   color: red;
 }
-
-
 
 img.playerCard {
   width: 200px;
@@ -49,4 +46,20 @@ img.compCard {
 
 span {
   background-color: red;
+}
+
+h2 {
+  position: fixed;
+  left: 45%;
+  bottom: 15%;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+article {
+  position: fixed;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  padding-top: 10px;
 }
