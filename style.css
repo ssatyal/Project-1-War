@@ -5,7 +5,6 @@ body {
 }
 
 h1 {
-  font-family: "PT Sans", sans-serif;
   margin: 10 auto;
   text-align: center;
 }
@@ -25,10 +24,10 @@ p {
 }
 
 div.gameOver {
-  position: absolute;
+  position: fixed;
   top: 200px;
   left: 400px;
-  color: red;
+  color: green;
   size: 22px;
 }
 
@@ -43,10 +42,6 @@ img.compCard {
   width: 200px;
   position: fixed;
   right: 20px;
-}
-
-span {
-  background-color: red;
 }
 
 h2 {

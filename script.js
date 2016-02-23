@@ -1,7 +1,6 @@
 var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
 var suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
 var valWorth = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-// var suitWorth = [0, 1, 2, 3];
 var deck = [];
 var playerHand = [];
 var computerHand = [];
@@ -45,9 +44,16 @@ function shuffleDeck(array) {
     }
   }
 
-
 function evalHands () {
-  //Show hands:
+  //end-game (workaround) logic for final winner
+  if (computerHand.length == 52){
+    $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
+    $( 'div.gameOver' ).replaceWith( '<br><div class="gameOver">Game over, Computer has won.</div>');
+  }else if (playerHand.length == 52){
+    $( 'p').replaceWith('<p>Player Deck: 52<br>Computer deck: 0</p>');
+    $( 'div.gameOver' ).replaceWith( '<div class="gameOver"><br>User has won!</div>');
+  }
+  //if player wins
   if (playerHand[0][2] > computerHand[0][2]){
     moveToPlayerHand();
   //if computer wins
@@ -63,26 +69,25 @@ function evalHands () {
       alert("There was a tie, COMPUTER wins coin flip!");
       }
     }
-  console.log("Player deck: "+playerHand.length);
-  console.log("Computer deck: "+computerHand.length);
+  //jQuery sends deck and cards to HTML
   if (playerHand.length > 0 && computerHand.length > 0) {
   $( "p" ).replaceWith( '<p>Player card: '+playerHand[0][0]+' '+playerHand[0][1]+ '<br>Computer card: '+computerHand[0][0]+' '+computerHand[0][1]+'<br>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
   displayCards();
-}
   }
+}
 
+//if player wins, move cards to their deck
 function moveToPlayerHand() {
-  console.log('Player won');
   //computer hand is transferred to player deck
   playerHand.push(computerHand[0]);
   //computer hand is removed from computer deck
   computerHand.splice(0, 1);
   //player hand should move to the back
   playerHand.push(playerHand[0]);
-  playerHand.splice(0, 1);}
-
+  playerHand.splice(0, 1);
+}
+//if computer wins, move cards to their deck
 function moveToComputerHand() {
-  console.log('Computer won');
   //player hand put at end of comp deck
   computerHand.push(playerHand[0]);
   //player hand removed from player deck
@@ -91,7 +96,7 @@ function moveToComputerHand() {
   computerHand.push(computerHand[0]);
   computerHand.splice(0, 1);
 }
-
+//jQuery sends card images to HTML
 function displayCards() {
   $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][3]+">");
   $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][3]+">");
@@ -101,20 +106,8 @@ function displayCards() {
 buildDeck();
 shuffleDeck(deck);
 deal();
-// var computerDeck = computerHand.length;
-// var playerDeck = playerHand.length;
 
 //some while loop stuff here for testing
-// while (playerHand.length > 0 && computerHand.length > 0) {
-//    evalHands();
-//  }
-
-
-//work around to show final tally
-if (computerHand.length == 52){
-  $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
-  $( 'div.gameOver' ).replaceWith( '<br><div class="gameOver">Game over, Computer has won.</div>');
-}else if (playerHand.length == 52){
-  $( 'p').replaceWith('<p>Player Deck: 52<br>Computer deck: 0</p>');
-  $( 'div.gameOver' ).replaceWith( '<div class="gameOver"><br>User has won!</div>');
-}
+while (playerHand.length > 0 && computerHand.length > 0) {
+   evalHands();
+ }
