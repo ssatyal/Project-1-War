@@ -1,0 +1,20 @@
+h1 {
+  margin: 10 auto;
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+p {
+  float: left;
+  position: relative;
+  left: 40%;
+
+}
+
+div {
+  text-align: center;
+}
