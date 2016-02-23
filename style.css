@@ -24,11 +24,12 @@ p {
   padding: 10px;
 }
 
-.gameOver {
-  float:left;
-  position: relative;
-  left: 40%;
+div.gameOver {
+  position: absolute;
+  top: 200px;
+  left: 400px;
   color: red;
+  size: 22px;
 }
 
 img.playerCard {
