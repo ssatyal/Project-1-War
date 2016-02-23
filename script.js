@@ -96,7 +96,7 @@ function displayCards() {
   $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][3]+">");
   $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][3]+">");
 }
-
+ 
 //calling functions here:
 buildDeck();
 shuffleDeck(deck);
