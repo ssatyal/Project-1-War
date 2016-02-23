@@ -113,8 +113,8 @@ deal();
 //work around to show final tally
 if (computerHand.length == 52){
   $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
-  $( 'div' ).replaceWith( '<br><div>Game over, Computer has won.</div>');
+  $( 'div.gameOver' ).replaceWith( '<br><div class="gameOver">Game over, Computer has won.</div>');
 }else if (playerHand.length == 52){
   $( 'p').replaceWith('<p>Player Deck: 52<br>Computer deck: 0</p>');
-  $( 'div' ).replaceWith( '<div><br>User has won!</div>');
+  $( 'div.gameOver' ).replaceWith( '<div class="gameOver"><br>User has won!</div>');
 }
