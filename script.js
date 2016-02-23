@@ -92,7 +92,7 @@ function moveToComputerHand() {
 
 function displayCards() {
   $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][4]+">");
-
+  $('img.compCard').replaceWith("<img class='cCard' src="+computerHand[0][4]+">");
 }
 
 //calling functions here:
