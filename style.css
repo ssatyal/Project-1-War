@@ -54,6 +54,7 @@ h2 {
 
 article {
   position: fixed;
+  font-size: 14px;
   bottom: 10%;
   left: 10%;
   right: 10%;

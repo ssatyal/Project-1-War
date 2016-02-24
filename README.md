@@ -11,7 +11,7 @@ WAR
 At this point I needed a way to break the event of a tie. Originally I had planned for ties to just go back into each respective deck it came from, but this caused a never ending game!
   - Ties are now broken by a random coin flip (Math.random).
 - Eventually, I added jQuery to the game in order to replace images and text in several HTML elements.
-- The only functionality I was unable to add was the actual game version of a tie (add three more cards and flip a fourth to evaluate the winner).
+- I was able to add functionality to break a tie by evaluating the next card in each deck! Winner takes three cards from the opponent - Woohoo!
 
 
 # Task Tracking

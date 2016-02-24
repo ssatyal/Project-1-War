@@ -1,6 +1,6 @@
 var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
 var suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
-var valWorth = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+var valWorth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 var deck = [];
 var playerHand = [];
 var computerHand = [];
@@ -45,6 +45,12 @@ function shuffleDeck(array) {
   }
 
 function evalHands () {
+
+  displayCards();
+  //jQuery sends deck and cards to HTML
+  if (playerHand.length > 0 && computerHand.length > 0) {
+  $( "p" ).replaceWith( '<p>Player card: '+playerHand[0][0]+' '+playerHand[0][1]+ '<br>Computer card: '+computerHand[0][0]+' '+computerHand[0][1]+'<br>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
+  }
   //end-game (workaround) logic for final winner
   if (computerHand.length == 52){
     $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
@@ -61,18 +67,13 @@ function evalHands () {
     moveToComputerHand();
   //it's a tie, coin flip it
 }else{
-    if (Math.random() > 0.5) {
-      moveToPlayerHand();
-      alert("There was a tie, PLAYER wins coin flip!");
-    }else{
-      moveToComputerHand();
-      alert("There was a tie, COMPUTER wins coin flip!");
-      }
+    if (playerHand[1][2] > computerHand[1][2]) {
+      alert("There was a tie, your next card beats the computer's next! You are awarded three total cards.");
+      playerWonTie();
+    }else {
+      alert("There was a tie, Computer's next card beats your card! Computer steals three cards from you.");
+      computerWonTie();
     }
-  //jQuery sends deck and cards to HTML
-  if (playerHand.length > 0 && computerHand.length > 0) {
-  $( "p" ).replaceWith( '<p>Player card: '+playerHand[0][0]+' '+playerHand[0][1]+ '<br>Computer card: '+computerHand[0][0]+' '+computerHand[0][1]+'<br>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
-  displayCards();
   }
 }
 
@@ -96,10 +97,24 @@ function moveToComputerHand() {
   computerHand.push(computerHand[0]);
   computerHand.splice(0, 1);
 }
-//jQuery sends card images to HTML
+
+//jQuery function to sends card images to HTML
 function displayCards() {
   $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][3]+">");
   $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][3]+">");
+}
+
+//if player wins tie
+function playerWonTie() {
+  moveToPlayerHand();
+  moveToPlayerHand();
+  moveToPlayerHand();
+}
+//if computer wins tie
+function computerWonTie() {
+  moveToComputerHand();
+  moveToComputerHand();
+  moveToComputerHand();
 }
 
 //calling functions here:
