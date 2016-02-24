@@ -125,6 +125,6 @@ shuffleDeck(deck);
 deal();
 
 //some while loop stuff here for testing
-while (playerHand.length > 0 && computerHand.length > 0) {
-   evalHands();
- }
+// while (playerHand.length > 0 && computerHand.length > 0) {
+//    evalHands();
+//  }
