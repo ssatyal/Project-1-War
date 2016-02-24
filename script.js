@@ -45,20 +45,11 @@ function shuffleDeck(array) {
   }
 
 function evalHands () {
-
   displayCards();
   //jQuery sends deck and cards to HTML
   if (playerHand.length > 0 && computerHand.length > 0) {
   $( "p" ).replaceWith( '<p>Player card: '+playerHand[0][0]+' '+playerHand[0][1]+ '<br>Computer card: '+computerHand[0][0]+' '+computerHand[0][1]+'<br>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
-  }
-  //end-game (workaround) logic for final winner
-  if (computerHand.length == 52){
-    $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
-    $( 'div.gameOver' ).replaceWith( '<br><div class="gameOver">Game over, Computer has won.</div>');
-  }else if (playerHand.length == 52){
-    $( 'p').replaceWith('<p>Player Deck: 52<br>Computer deck: 0</p>');
-    $( 'div.gameOver' ).replaceWith( '<div class="gameOver"><br>User has won!</div>');
-  }
+}
   //if player wins
   if (playerHand[0][2] > computerHand[0][2]){
     moveToPlayerHand();
@@ -67,7 +58,8 @@ function evalHands () {
     moveToComputerHand();
   //it's a tie, coin flip it
 }else{
-    if (playerHand[1][2] > computerHand[1][2]) {
+    if (playerHand.length === 0 || computerHand.length === 0){}
+    else if (playerHand[1][2] > computerHand[1][2]) {
       alert("There was a tie, your next card beats the computer's next! You are awarded three total cards.");
       playerWonTie();
     }else {
@@ -100,8 +92,18 @@ function moveToComputerHand() {
 
 //jQuery function to sends card images to HTML
 function displayCards() {
+  //determine eng-game
+  if (playerHand.length > 0 && computerHand.length > 0){
   $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][3]+">");
-  $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][3]+">");
+  $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][3]+">");}
+  //otherwise
+  else if (computerHand.length == 52){
+      $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
+      $( 'div.gameOver' ).replaceWith( '<br><div class="gameOver">Game over, Computer has won.</div>');
+    }else if (playerHand.length == 52){
+      $( 'p').replaceWith('<p>Player Deck: 52<br>Computer deck: 0</p>');
+      $( 'div.gameOver' ).replaceWith( '<div class="gameOver"><br>User has won!</div>');
+  }
 }
 
 //if player wins tie
@@ -123,6 +125,6 @@ shuffleDeck(deck);
 deal();
 
 //some while loop stuff here for testing
-// while (playerHand.length > 0 && computerHand.length > 0) {
-//    evalHands();
-//  }
+while (playerHand.length > 0 && computerHand.length > 0) {
+   evalHands();
+ }
