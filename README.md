@@ -3,12 +3,18 @@
 Project 1
 WAR
 
-#Task Tracking
-Backlog:
-- Game round appends to page
-- Counters keep track of scores and rounds
-- CSS style page
-- add HTML elements to append game logs to
+# Approach
+- The WAR game emulates the card game comparing card values/worth against one another.
+- I began tackling programming of the game by coding the core game logic in JavaScript.
+  - Build the deck, shuffle, and deal cards when the page is visited.
+  - The user clicks the button (event listener) to fire off the game and each subsequent round. The first cards in the decks (arrays) for both the user and computer are evaluated against one another and the winner of that round collects the two cards (then moved to the back of their personal deck (array)).
+At this point I needed a way to break the event of a tie. Originally I had planned for ties to just go back into each respective deck it came from, but this caused a never ending game!
+  - Ties are now broken by a random coin flip (Math.random).
+- Eventually, I added jQuery to the game in order to replace images and text in several HTML elements.
+- The only functionality I was unable to add was the actual game version of a tie (add three more cards and flip a fourth to evaluate the winner).
+
+
+# Task Tracking
 
 Complete:
 - Initialize HTML, CSS, JS files and link
@@ -20,9 +26,16 @@ Complete:
 - Create game logic to evaluate winner each round
 - Send loser's card to game winner's deck
 - Click function fires off a round
+- Add card images to page
+- CSS style page
 
 Icebox:
 - Reset button for the game
+
+Scrapped:
+- Game round appends to page (score is based on deck anyway)
+- Counters keep track of scores and rounds (see above)
+- add HTML elements to append game logs to (logs would be lengthy additions to page)
 
 # User Stories
 As a <role> I should be able to <goal> so that <reason>
@@ -40,10 +53,10 @@ Silver:
 - ties will remain ties
 - button click initiates each round
 - evaluates cards using indices of arrays
-- round scores/game log are updated after each round using DOM manipulation/appends
+- ~~round scores/game log are updated after each round using DOM manipulation/appends
   computer had x, player had y, winner = x||y,
-  current score comp a, player b
-- counters indicate the current score and round
+  current score comp a, player b~~
+- counters indicate the current score ~~and round~~
 
 GOLD:
 - shuffle/deal deck
@@ -55,8 +68,8 @@ GOLD:
 - after each round, score is updated and moves are shown
   - computer had x, player had y, winner = x||y,
     current score comp a, player b
-- evaluates tie situations based on suits
-- game log showing previous rounds/moves (DOM append)
+- evaluates tie situations based on "betting three cards and flipping a fourth (evaluate values of fourth for winner)"
+- ~~game log showing previous rounds/moves (DOM append)~~
 - ability to reset game with a button
 - everything handled/pushed up with DOM manipulation
 
