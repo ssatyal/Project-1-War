@@ -28,6 +28,7 @@ Complete:
 - Click function fires off a round
 - Add card images to page
 - CSS style page
+- Break tie by evaluating next card
 
 Icebox:
 - Reset button for the game

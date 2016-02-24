@@ -35,7 +35,6 @@ img.playerCard {
   width: 200px;
   position: fixed;
   left: 20px;
-
 }
 
 img.compCard {
@@ -47,7 +46,7 @@ img.compCard {
 h2 {
   position: fixed;
   left: 45%;
-  bottom: 15%;
+  bottom: 12%;
   padding-bottom: 10px;
   text-align: center;
 }
@@ -55,8 +54,8 @@ h2 {
 article {
   position: fixed;
   font-size: 14px;
-  bottom: 10%;
-  left: 10%;
-  right: 10%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
   padding-top: 10px;
 }
