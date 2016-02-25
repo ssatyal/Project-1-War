@@ -46,7 +46,7 @@ function shuffleDeck(array) {
 
 function evalHands () {
   displayCards();
-  //jQuery sends deck and cards to HTML
+  //jQuery sends deck and cards to HTML p tag
   if (playerHand.length > 0 && computerHand.length > 0) {
   $( "p" ).replaceWith( '<p>Player card: '+playerHand[0][0]+' '+playerHand[0][1]+ '<br>Computer card: '+computerHand[0][0]+' '+computerHand[0][1]+'<br>Player deck: '+playerHand.length+'<br>Computer deck: '+computerHand.length+'</p>');
 }
@@ -56,7 +56,7 @@ function evalHands () {
   //if computer wins
   }else if (playerHand[0][2] < computerHand[0][2]) {
     moveToComputerHand();
-  //it's a tie, coin flip it
+  //it's a tie, look at next card in hand, computer wins if THAT is a tie
 }else{
     if (playerHand.length === 0 || computerHand.length === 0){}
     else if (playerHand[1][2] > computerHand[1][2]) {
@@ -90,13 +90,13 @@ function moveToComputerHand() {
   computerHand.splice(0, 1);
 }
 
-//jQuery function to sends card images to HTML
+//jQuery function to sends card images to HTML and runs end game text
 function displayCards() {
-  //determine eng-game
+  //replaces img tags with current hands
   if (playerHand.length > 0 && computerHand.length > 0){
   $('img.playerCard').replaceWith("<img class='playerCard' src="+playerHand[0][3]+">");
   $('img.compCard').replaceWith("<img class='compCard' src="+computerHand[0][3]+">");}
-  //otherwise
+  //otherwise if deck is empty, send through final score log
   else if (computerHand.length == 52){
       $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
       $( 'div.gameOver' ).replaceWith( '<br><div class="gameOver">Game over, Computer has won.</div>');
@@ -106,25 +106,25 @@ function displayCards() {
   }
 }
 
-//if player wins tie
+//if player wins tie, send them three cards
 function playerWonTie() {
   moveToPlayerHand();
   moveToPlayerHand();
   moveToPlayerHand();
 }
-//if computer wins tie
+//if computer wins tie, send it three cards
 function computerWonTie() {
   moveToComputerHand();
   moveToComputerHand();
   moveToComputerHand();
 }
 
-//calling functions here:
+//calling functions here, runs when page loads:
 buildDeck();
 shuffleDeck(deck);
 deal();
 
-//some while loop stuff here for testing
+//some while loop stuff here for testing (end of the game)
 // while (playerHand.length > 0 && computerHand.length > 0) {
 //    evalHands();
 //  }

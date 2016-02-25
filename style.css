@@ -51,11 +51,10 @@ h2 {
   text-align: center;
 }
 
-article {
+.rules {
   position: fixed;
   font-size: 14px;
-  bottom: 5%;
+  bottom: 0%;
   left: 5%;
   right: 5%;
-  padding-top: 10px;
 }

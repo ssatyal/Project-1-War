@@ -31,6 +31,7 @@ Complete:
 
 Bugs:
 - If a tie occurs near the 'end' of the game (i.e. less less than three cards in a deck) then the game logic cannot run as programmed.
+- Minor annoyance, gameplay rules section looks wonky if you make the browser smaller
 
 Icebox:
 - Reset button for the game
