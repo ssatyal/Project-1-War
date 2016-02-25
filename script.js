@@ -56,7 +56,7 @@ function evalHands () {
   //if computer wins
   }else if (playerHand[0][2] < computerHand[0][2]) {
     moveToComputerHand();
-  //it's a tie, look at next card in hand, computer wins if THAT is a tie
+  //it's a tie, look at next card in hand to determine winner, computer wins if THAT is a tie
 }else{
     if (playerHand.length === 0 || computerHand.length === 0){}
     else if (playerHand[1][2] > computerHand[1][2]) {
