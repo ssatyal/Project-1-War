@@ -1,17 +1,16 @@
 # Project-1-War
 
-Project 1
-WAR
-
 # Approach
 - The WAR game emulates the card game comparing card values/worth against one another.
 - I began tackling programming of the game by coding the core game logic in JavaScript.
   - Build the deck, shuffle, and deal cards when the page is visited.
-  - The user clicks the button (event listener) to fire off the game and each subsequent round. The first cards in the decks (arrays) for both the user and computer are evaluated against one another and the winner of that round collects the two cards (then moved to the back of their personal deck (array)).
+  - The user clicks the button (event listener) to fire off the game and each subsequent round. The first cards in the decks (arrays) for both the user and computer are evaluated against one another and the winner of that round collects the two cards (then moved to the back of their personal deck (array).
 At this point I needed a way to break the event of a tie. Originally I had planned for ties to just go back into each respective deck it came from, but this caused a never ending game!
-  - Ties are now broken by a random coin flip (Math.random).
+  - ~~Ties are now broken by a random coin flip (Math.random).~~
+  - I was able to add functionality to break a tie by evaluating the next card in each deck! Winner takes three cards from the opponent - Woohoo!
 - Eventually, I added jQuery to the game in order to replace images and text in several HTML elements.
-- I was able to add functionality to break a tie by evaluating the next card in each deck! Winner takes three cards from the opponent - Woohoo!
+  - This allows the user to immediately asses how many cards are in their deck and computer deck (current score)
+
 
 
 # Task Tracking
@@ -30,13 +29,16 @@ Complete:
 - CSS style page
 - Break tie by evaluating next card
 
+Bugs:
+- If a tie occurs near the 'end' of the game (i.e. less less than three cards in a deck) then the game logic cannot run as programmed.
+
 Icebox:
 - Reset button for the game
 
 Scrapped:
 - Game round appends to page (score is based on deck anyway)
 - Counters keep track of scores and rounds (see above)
-- add HTML elements to append game logs to (logs would be lengthy additions to page)
+- add HTML elements to append game logs to (logs would be lengthy and unnecessary additions to page)
 
 # User Stories
 As a <role> I should be able to <goal> so that <reason>
