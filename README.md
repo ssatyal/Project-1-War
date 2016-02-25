@@ -11,8 +11,6 @@ At this point I needed a way to break the event of a tie. Originally I had plann
 - Eventually, I added jQuery to the game in order to replace images and text in several HTML elements.
   - This allows the user to immediately asses how many cards are in their deck and computer deck (current score)
 
-
-
 # Task Tracking
 
 Complete:
