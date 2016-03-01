@@ -20,3 +20,5 @@ game logic:
 
 - No cards left in player or AI deck;
   - display the winner
+
+Nice!
