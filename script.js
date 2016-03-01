@@ -21,6 +21,7 @@ function buildDeck() {
 function shuffleDeck(array) {
   var m = array.length, t, i;
     // While there remain elements to shuffle…
+    // Yesss. Such well-documented code!
     while (m) {
       // Pick a remaining element…
       i = Math.floor(Math.random() * m--);
@@ -58,6 +59,7 @@ function evalHands () {
     moveToComputerHand();
   //it's a tie, look at next card in hand to determine winner, computer wins if THAT is a tie
 }else{
+  // Indentation's a little weird here
     if (playerHand.length === 0 || computerHand.length === 0){}
     else if (playerHand[1][2] > computerHand[1][2]) {
       alert("There was a tie, your next card beats the computer's next! You are awarded three total cards.");

@@ -84,3 +84,5 @@ BRONZE: MVP
   - if that fails, some complex/convoluted switch statement will get us there
 - an alert informs the user of the final score
   or alert after each round and make the user click through minimum 26 alerts... mwuahaha
+
+Great work!!
