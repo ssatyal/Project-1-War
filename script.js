@@ -66,10 +66,10 @@ var game = {
 //runs if there is a tie in evalHands
 breakTie: function() {
             if (game.playerHand[1][2] > game.computerHand[1][2]) {
-              alert("There was a tie, your next card beats the computer's next! You are awarded three total cards.");
+              alertify.success("There was a tie, your next card beats the computer's next! You are awarded three total cards.");
               game.playerWonTie();
             }else {
-              alert("There was a tie, Computer's next card beats your card! Computer steals three cards from you.");
+              alertify.error("There was a tie, Computer's next card beats your card! Computer steals three cards from you.");
               game.computerWonTie();
             }
           },
