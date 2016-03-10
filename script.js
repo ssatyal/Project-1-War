@@ -111,12 +111,12 @@ breakTie: function() {
 //runs if computer won
 computerWinsGame: function(){
                     $( 'p').replaceWith('<p>Player Deck: 0<br>Computer deck: 52</p>');
-                    $( 'div.gameOver' ).replaceWith( '<div class="gameOver">Game over, Computer has won.</div>');
+                    $( 'p' ).append( '<div class="gameOver">Game over, Computer has won.</div>');
                   },
 //runs if player won
 playerWinsGame: function(){
                   $( 'p').replaceWith('<p>Player Deck: 52<br>Computer deck: 0</p>');
-                  $( 'div.gameOver' ).replaceWith( '<div class="gameOver"><br>User has won!</div>');
+                  $( 'p' ).append( '<div class="gameOver"><br>User has won!</div>');
                 },
 //replaces images on board
 replaceImages: function() {
